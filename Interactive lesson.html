@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Natural Processes: Changing Environments&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Tailwind CSS CDN --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Google Fonts - Inter --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Inter', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f3f4f6; /* Light gray background */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Neo-brutalism box style */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.neo-box {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 4px solid #1a202c; /* Dark border */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 8px 8px 0px #1a202c; /* Offset dark shadow */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #ffffff; /* White background */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 0.5rem; /* Slightly rounded corners */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: transform 0.2s, box-shadow 0.2s;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.neo-box:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translate(-2px, -2px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 10px 10px 0px #1a202c;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Neo-brutalism button style */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.neo-button {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #facc15; /* Yellow */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #1a202c; /* Dark text */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700; /* Bold */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0.75rem 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 4px solid #1a202c;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 4px 4px 0px #1a202c;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 0.25rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: transform 0.1s, box-shadow 0.1s;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.neo-button:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translate(2px, 2px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0px 0px 0px #1a202c;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Responsive video container */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.video-container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 56.25%; /* 16:9 Aspect Ratio */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 2px solid #1a202c; /* Inner border for video */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.video-container iframe {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body class="bg-gray-100 text-gray-900"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container mx-auto p-4 sm:p-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Header Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;header class="text-center mb-12 py-8 bg-blue-400 border-4 border-black shadow-[12px_12px_0_black] rounded-lg"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold uppercase tracking-tight text-black mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Earth's Dynamic Forces</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-lg sm:text-xl text-black font-semibold"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Explore natural processes that shape our world.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Videos Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section class="mb-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-3xl sm:text-4xl font-bold uppercase text-center mb-8 pb-4 border-b-4 border-black"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Featured Processes</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Erosion Video --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="neo-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-bold mb-4 text-black"&gt;1. Erosion&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="video-container mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;iframe</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>src="https://www.youtube.com/embed/R-Iak3Wvh9c?si=lFP08EalgDSIUHHt"</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>title="Weathering and Erosion: Crash Course Kids #10.2"</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>frameborder="0"</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>allowfullscreen&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/iframe&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-700"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>Discover how natural forces like wind and water gradually wear away the Earth's surface, creating stunning landscapes and dramatic changes over time.</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Volcanic Activity Video --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="neo-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-bold mb-4 text-black"&gt;2. Volcanic Activity&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="video-container mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;iframe</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>src="https://www.youtube.com/embed/LQwZwKS9RPs?si=w6PJbpjvMXj_euS2"</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>title="How do volcanoes erupt? - TED-Ed"</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>frameborder="0"</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>allowfullscreen&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/iframe&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-700"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>Witness the immense power of volcanoes as molten rock, ash, and gases erupt from beneath the Earth's crust, reshaping landforms in an instant.</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Tsunamis Video --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="neo-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-bold mb-4 text-black"&gt;3. Tsunamis&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="video-container mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;iframe</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>src="https://www.youtube.com/embed/V6cnFM55_Dw?si=K1Vi1CidnpJF56bo"</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>title="How Do Tsunamis Work? - SciShow Kids"</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>frameborder="0"</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>allowfullscreen&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/iframe&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-700"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>Understand the science behind these powerful ocean waves, often triggered by underwater earthquakes, and their devastating impact on coastal environments.</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Bushfires Video --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="neo-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-bold mb-4 text-black"&gt;4. Bushfires&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="video-container mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;iframe</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>src="https://www.youtube.com/embed/dKVakiS2VoY?si=6Uy1fm6AQyYM2JCx"</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>title="The Science of Bushfire: How do they start and spread? | ABC News In-depth"</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>frameborder="0"</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>allowfullscreen&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/iframe&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-700"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>Learn about the complex factors that contribute to bushfires, their ecological role in some Australian ecosystems, and their profound impact on landscapes and communities.</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Other Activities Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section class="neo-box bg-green-300 border-4 border-black shadow-[8px_8px_0_black] p-6 sm:p-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-3xl sm:text-4xl font-bold uppercase text-black mb-6 pb-4 border-b-4 border-black"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Beyond the Videos: Explore More!</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-lg text-gray-800 mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Now that you've seen the power of these natural processes, it's time to dive deeper! Here are some ideas for further activities to enhance your understanding:</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul class="list-disc pl-6 space-y-4 text-gray-800 text-base sm:text-lg"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li class="relative pl-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="absolute left-0 top-0 text-2xl font-extrabold text-black"&gt;&amp;bull;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;strong&gt;Interactive Map Exploration:&lt;/strong&gt; Use Google Earth or Geoscience Australia's hazard maps to locate areas prone to these natural processes. Can you find evidence of past events?</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li class="relative pl-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="absolute left-0 top-0 text-2xl font-extrabold text-black"&gt;&amp;bull;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;strong&gt;Research Project:&lt;/strong&gt; Choose one natural process and research a specific event (e.g., the 2011 Japan Tsunami, a major Australian bushfire, the eruption of Krakatoa). Investigate its causes, impacts, and recovery efforts.</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li class="relative pl-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="absolute left-0 top-0 text-2xl font-extrabold text-black"&gt;&amp;bull;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;strong&gt;Design a Warning System:&lt;/strong&gt; Imagine you live in an area vulnerable to one of these processes. Design a simple warning system or community preparedness plan.</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li class="relative pl-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="absolute left-0 top-0 text-2xl font-extrabold text-black"&gt;&amp;bull;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;strong&gt;Debate:&lt;/strong&gt; "Are natural processes entirely destructive, or do they also play a vital role in shaping healthy ecosystems?" Prepare arguments for both sides.</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li class="relative pl-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="absolute left-0 top-0 text-2xl font-extrabold text-black"&gt;&amp;bull;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;strong&gt;Creative Writing/Art:&lt;/strong&gt; Create a short story, poem, or piece of art inspired by the power and impact of one of these natural processes.</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="text-center mt-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="neo-button"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Start Your Next Activity!</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Footer Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;footer class="text-center mt-12 py-6 text-gray-700 text-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;&amp;copy; 2025 Natural Processes Explorer. All rights reserved.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>

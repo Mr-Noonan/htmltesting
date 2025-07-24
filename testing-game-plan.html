@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Testing Game - Godot Game Plan</title>
+      
+    <style>
+      body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #0f172a; color: #e2e8f0; margin: 0; padding: 2rem; }
+      .container { max-width: 800px; margin: auto; }
+      h1 { font-size: 2.25rem; font-weight: 800; text-align: center; color: white; margin-bottom: 2rem; }
+      h2 button { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.25rem; font-size: 1.125rem; font-weight: 600; text-align: left; background-color: #1e293b; border: none; color: #cbd5e1; cursor: pointer; transition: background-color 0.2s; }
+      h2 button:hover { background-color: #334155; }
+      .accordion-item { border: 1px solid #334155; border-radius: 0.5rem; overflow: hidden; margin-bottom: 1rem; }
+      .content { padding: 1.25rem; border-top: 1px solid #334155; display: none; background-color: #0f172a; }
+      .content.open { display: block; }
+      p { white-space: pre-wrap; line-height: 1.6; }
+      pre { background-color: #020617; color: #67e8f9; padding: 1rem; border-radius: 0.375rem; overflow-x: auto; font-family: monospace; white-space: pre; }
+      .arrow { transition: transform 0.2s ease-in-out; }
+    </style>
+  
+    </head>
+    <body>
+      <div class="container">
+        <h1>Testing Game Game Plan</h1>
+        <div id="accordion-container">
+    <div class="accordion-item">
+      <h2>
+        <button class="accordion-toggle" aria-expanded="true">
+          <span>1. Initial Project Setup and Folder Structure</span>
+          <svg class="arrow" width="24" height="24" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+        </button>
+      </h2>
+      <div class="content">
+        <p>Start by opening Godot Engine 4.2 or later. Create a new project, name it &quot;Testing Game&quot;, and choose a suitable folder location. Once the project is created, organize your project files by creating the following folders in your FileSystem dock: &quot;scenes&quot;, &quot;scripts&quot;, &quot;assets&quot;, &quot;assets/sprites&quot;, &quot;assets/sounds&quot;, &quot;assets/particles&quot;. This structure helps keep your project organized as it grows.</p>
+        
+      </div>
+    </div>
+  
+    <div class="accordion-item">
+      <h2>
+        <button class="accordion-toggle" aria-expanded="false">
+          <span>2. Creating the Player Scene</span>
+          <svg class="arrow" width="24" height="24" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+        </button>
+      </h2>
+      <div class="content">
+        <p>Create a new scene by clicking &quot;Scene&quot; -&gt; &quot;New Scene&quot;. Select &quot;2D Scene&quot; and rename the root node to &quot;Player&quot;. Change its type to &quot;CharacterBody2D&quot;. Add a &quot;Sprite2D&quot; node as a child of Player, and a &quot;CollisionShape2D&quot; node as another child. For the Sprite2D, you can drag a placeholder image (e.g., a simple square or a pixel art character) into its &#039;Texture&#039; property. For the CollisionShape2D, select a &#039;RectangleShape2D&#039; in its &#039;Shape&#039; property and adjust its size to fit your player sprite. Save this scene as &quot;Player.tscn&quot; in the &quot;scenes&quot; folder.</p>
+        
+      </div>
+    </div>
+  
+    <div class="accordion-item">
+      <h2>
+        <button class="accordion-toggle" aria-expanded="false">
+          <span>3. Implementing Player Movement, Jump Sound, and Jump Particles</span>
+          <svg class="arrow" width="24" height="24" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+        </button>
+      </h2>
+      <div class="content">
+        <p>Attach a new script to the `Player` node (right-click Player node -&gt; Attach Script). Name it `Player.gd` and save it in the `scripts` folder. This script will control the player&#039;s movement, including horizontal movement and jumping. We&#039;ll use `_physics_process` for physics-based movement and `Input.is_action_just_pressed` for jump input. Remember to set up input actions in Project -&gt; Project Settings -&gt; Input Map: add &#039;jump&#039; (Spacebar), &#039;move_left&#039; (A or Left Arrow), and &#039;move_right&#039; (D or Right Arrow). Also, add an `AudioStreamPlayer2D` node named `JumpSound` and a `GPUParticles2D` node named `JumpParticles` as children of the Player node. Configure the `JumpParticles` (e.g., one-shot, lifetime, spread, texture) to emit dust from the player&#039;s feet when jumping. Load a placeholder sound for `JumpSound` (e.g., &#039;res://assets/sounds/jump.ogg&#039;).</p>
+        
+          <h4 style="font-weight: 600; color: #94a3b8; margin-top: 1.5rem; margin-bottom: 0.5rem;">GDScript Code:</h4>
+          <pre><code>extends CharacterBody2D
+
+@export var speed: float = 200.0
+@export var jump_velocity: float = -400.0
+@export var gravity: float = 900.0
+
+@onready var sprite: Sprite2D = $Sprite2D
+@onready var jump_sound: AudioStreamPlayer2D = $JumpSound
+@onready var jump_particles: GPUParticles2D = $JumpParticles
+
+func _ready():
+    # Ensure the particle system is not emitting by default
+    jump_particles.emitting = false
+
+func _physics_process(delta: float) -&gt; void:
+    # Apply gravity
+    velocity.y += gravity * delta
+
+    # Handle horizontal movement (forwards/backwards on platform)
+    var direction_x: float = Input.get_axis(&quot;move_left&quot;, &quot;move_right&quot;)
+    velocity.x = direction_x * speed
+
+    # Handle jump
+    if is_on_floor():
+        if Input.is_action_just_pressed(&quot;jump&quot;):
+            velocity.y = jump_velocity
+            if jump_sound:
+                jump_sound.play()
+            if jump_particles:
+                jump_particles.global_position = global_position + Vector2(0, sprite.texture.get_height() / 2)
+                jump_particles.emitting = true # Start emitting particles on jump
+    else:
+        # Stop emitting particles if not on floor (e.g., after initial burst)
+        if jump_particles and jump_particles.emitting and jump_particles.amount_left == 0:
+            jump_particles.emitting = false
+
+    move_and_slide()
+
+    # Flip sprite based on direction
+    if direction_x &gt; 0:
+        sprite.flip_h = false
+    elif direction_x &lt; 0:
+        sprite.flip_h = true
+
+    # Ensure particles stop emitting after their burst
+    if jump_particles and jump_particles.emitting and jump_particles.amount_left == 0:
+        jump_particles.emitting = false
+</code></pre>
+        
+      </div>
+    </div>
+  
+    <div class="accordion-item">
+      <h2>
+        <button class="accordion-toggle" aria-expanded="false">
+          <span>4. Designing the Coin Scene</span>
+          <svg class="arrow" width="24" height="24" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+        </button>
+      </h2>
+      <div class="content">
+        <p>Create a new scene (New Scene -&gt; 2D Scene). Rename the root node to &quot;Coin&quot; and change its type to &quot;Area2D&quot;. Add a &quot;Sprite2D&quot; node as a child for the coin&#039;s visual, and a &quot;CollisionShape2D&quot; node for its detection area. Use a simple circle or square texture for the Sprite2D and set the CollisionShape2D to a &#039;CircleShape2D&#039; or &#039;RectangleShape2D&#039; that fits the sprite. Save this scene as &quot;Coin.tscn&quot; in the &quot;scenes&quot; folder.</p>
+        
+      </div>
+    </div>
+  
+    <div class="accordion-item">
+      <h2>
+        <button class="accordion-toggle" aria-expanded="false">
+          <span>5. Implementing Coin Collection, Sound, and Particles</span>
+          <svg class="arrow" width="24" height="24" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+        </button>
+      </h2>
+      <div class="content">
+        <p>Attach a new script to the `Coin` node (right-click Coin node -&gt; Attach Script). Name it `Coin.gd` and save it in the `scripts` folder. This script will handle the coin&#039;s behavior when collected. It will emit a signal to notify the `Main` scene that it has been collected, play a sound, emit particles, and then remove itself from the scene. Add an `AudioStreamPlayer2D` node named `CollectSound` and a `GPUPparticles2D` node named `CollectParticles` as children of the Coin node. Load a placeholder sound for `CollectSound` (e.g., &#039;res://assets/sounds/coin_collect.ogg&#039;). Configure `CollectParticles` (e.g., one-shot, small explosion of stars/coins) to activate upon collection.</p>
+        
+          <h4 style="font-weight: 600; color: #94a3b8; margin-top: 1.5rem; margin-bottom: 0.5rem;">GDScript Code:</h4>
+          <pre><code>extends Area2D
+
+signal coin_collected
+
+@onready var collect_sound: AudioStreamPlayer2D = $CollectSound
+@onready var collect_particles: GPUParticles2D = $CollectParticles
+
+func _ready():
+    # Connect to the player&#039;s body_entered signal
+    body_entered.connect(_on_body_entered)
+    # Ensure particles are not emitting by default
+    collect_particles.emitting = false
+
+func _on_body_entered(body: Node2D) -&gt; void:
+    if body.name == &quot;Player&quot;:
+        emit_signal(&quot;coin_collected&quot;)
+        # Play sound and particles before queue_free
+        if collect_sound:
+            collect_sound.play()
+        if collect_particles:
+            collect_particles.emitting = true # Start emitting particles
+            # Wait for particles to finish or for a short duration before queuing free
+            await get_tree().create_timer(collect_particles.lifetime).timeout
+            # If particles are one-shot, they will stop on their own. We just need to wait.
+        queue_free() # Remove the coin after collection</code></pre>
+        
+      </div>
+    </div>
+  
+    <div class="accordion-item">
+      <h2>
+        <button class="accordion-toggle" aria-expanded="false">
+          <span>6. Building the Barrel Obstacle Scene</span>
+          <svg class="arrow" width="24" height="24" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+        </button>
+      </h2>
+      <div class="content">
+        <p>Create a new scene (New Scene -&gt; 2D Scene). Rename the root node to &quot;Barrel&quot; and change its type to &quot;Area2D&quot; (or `StaticBody2D` if you want a solid collision for the player, but `Area2D` is fine for detection). Add a &quot;Sprite2D&quot; node for the barrel&#039;s visual and a &quot;CollisionShape2D&quot; node for its detection area. Use a barrel-like texture for the Sprite2D and set the CollisionShape2D appropriately. Save this scene as &quot;Barrel.tscn&quot; in the &quot;scenes&quot; folder.</p>
+        
+      </div>
+    </div>
+  
+    <div class="accordion-item">
+      <h2>
+        <button class="accordion-toggle" aria-expanded="false">
+          <span>7. Implementing Barrel Collision, Sound, and Particles</span>
+          <svg class="arrow" width="24" height="24" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+        </button>
+      </h2>
+      <div class="content">
+        <p>Attach a new script to the `Barrel` node (right-click Barrel node -&gt; Attach Script). Name it `Barrel.gd` and save it in the `scripts` folder. This script will detect when the player collides with it and emit a signal to the `Main` scene to trigger a game over. Add an `AudioStreamPlayer2D` node named `HitSound` and a `GPUParticles2D` node named `HitParticles` as children of the Barrel node. Load a placeholder sound for `HitSound` (e.g., &#039;res://assets/sounds/hit.ogg&#039;). Configure `HitParticles` (e.g., explosion effect) to activate upon collision.</p>
+        
+          <h4 style="font-weight: 600; color: #94a3b8; margin-top: 1.5rem; margin-bottom: 0.5rem;">GDScript Code:</h4>
+          <pre><code>extends Area2D
+
+signal game_over_triggered
+
+@onready var hit_sound: AudioStreamPlayer2D = $HitSound
+@onready var hit_particles: GPUParticles2D = $HitParticles
+
+func _ready():
+    # Connect to the player&#039;s body_entered signal
+    body_entered.connect(_on_body_entered)
+    # Ensure particles are not emitting by default
+    hit_particles.emitting = false
+
+func _on_body_entered(body: Node2D) -&gt; void:
+    if body.name == &quot;Player&quot;:
+        emit_signal(&quot;game_over_triggered&quot;)
+        # Play sound and particles before queue_free if desired, or let Main handle it
+        if hit_sound:
+            hit_sound.play()
+        if hit_particles:
+            hit_particles.emitting = true # Start emitting particles
+            # Wait for particles to finish or for a short duration before queuing free
+            await get_tree().create_timer(hit_particles.lifetime).timeout
+        queue_free() # Remove the barrel after collision</code></pre>
+        
+      </div>
+    </div>
+  
+    <div class="accordion-item">
+      <h2>
+        <button class="accordion-toggle" aria-expanded="false">
+          <span>8. Setting Up the Main Game Scene, Spawning, UI, and Game Over Logic</span>
+          <svg class="arrow" width="24" height="24" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+        </button>
+      </h2>
+      <div class="content">
+        <p>Create a new scene (New Scene -&gt; 2D Scene). Rename the root node to &quot;Main&quot; and save it as &quot;Main.tscn&quot; in the `scenes` folder. This will be your main game scene. Add a `Timer` node named `SpawnTimer` as a child, and set its `Wait Time` to `1.5` seconds and `Autostart` to `Off`. This timer will be used to periodically spawn obstacles and coins. Add a `CanvasLayer` node as a child, then add a `Label` node (named `ScoreLabel`) and a `Control` node (named `GameOverPanel`) as children of `CanvasLayer`. Inside `GameOverPanel`, add another `Label` for &quot;Game Over&quot; text and a `Button` for &quot;Restart&quot;. Attach a new script to the `Main` node (right-click Main node -&gt; Attach Script), name it `Main.gd`, and save it in the `scripts` folder. This script will instantiate the player, manage the game state, handle spawning, update the score, and manage the game over state. Drag your `Player.tscn`, `Coin.tscn`, and `Barrel.tscn` into the `player_scene`, `coin_scene`, and `barrel_scene` slots in the Inspector for the Main node. Connect the `timeout` signal of `SpawnTimer` to `_on_SpawnTimer_timeout()` in `Main.gd`. Connect the `pressed` signal of the `RestartButton` to `_on_RestartButton_pressed()` in `Main.gd`. Also, add an `AudioStreamPlayer2D` node named `GameOverSound` to the Main scene and load a placeholder sound (e.g., &#039;res://assets/sounds/game_over.ogg&#039;).</p>
+        
+          <h4 style="font-weight: 600; color: #94a3b8; margin-top: 1.5rem; margin-bottom: 0.5rem;">GDScript Code:</h4>
+          <pre><code>extends Node2D
+
+@export var player_scene: PackedScene
+@export var coin_scene: PackedScene
+@export var barrel_scene: PackedScene
+@export var initial_scroll_speed: float = 150.0
+@export var speed_increase_rate: float = 10.0 # units per second
+@export var spawn_interval: float = 1.5 # seconds between spawns
+
+var current_score: int = 0
+var game_over: bool = false
+var scroll_speed: float
+
+@onready var player_instance: CharacterBody2D
+@onready var score_label: Label = $CanvasLayer/ScoreLabel
+@onready var game_over_panel: Control = $CanvasLayer/GameOverPanel
+@onready var spawn_timer: Timer = $SpawnTimer
+@onready var game_over_sound: AudioStreamPlayer2D = $GameOverSound
+
+func _ready():
+    new_game()
+
+func new_game():
+    # Clear existing elements from previous game
+    for child in get_children():
+        if child is Area2D or child is CharacterBody2D:
+            child.queue_free()
+
+    game_over = false
+    current_score = 0
+    scroll_speed = initial_scroll_speed
+    update_score_display()
+    game_over_panel.hide()
+    spawn_timer.start(spawn_interval)
+    get_tree().paused = false
+
+    # Instantiate Player
+    player_instance = player_scene.instantiate() as CharacterBody2D
+    add_child(player_instance)
+    player_instance.position = Vector2(100, 400) # Starting position
+
+    # Connect player signals (if player had them, e.g., for game over)
+    # If Barrel/Coin handle emitting signals to Main, connect them when they spawn
+
+func _physics_process(delta: float) -&gt; void:
+    if game_over:
+        return
+
+    # Increase speed over time
+    scroll_speed += speed_increase_rate * delta
+
+    # Move existing coins and barrels
+    for child in get_children():
+        if child is Area2D and (child.name == &quot;Coin&quot; or child.name == &quot;Barrel&quot;):
+            child.position.x -= scroll_speed * delta
+            if child.position.x &lt; -100: # Off-screen to the left
+                child.queue_free()
+
+func _on_SpawnTimer_timeout() -&gt; void:
+    if game_over:
+        return
+
+    # Randomly spawn coin or barrel
+    var spawn_choice = randi_range(0, 1)
+    var new_object: Area2D
+
+    if spawn_choice == 0: # Spawn Coin
+        new_object = coin_scene.instantiate() as Area2D
+        new_object.position = Vector2(1200, randi_range(250, 450)) # Random Y for coins
+        new_object.coin_collected.connect(on_coin_collected)
+    else: # Spawn Barrel
+        new_object = barrel_scene.instantiate() as Area2D
+        new_object.position = Vector2(1200, 500) # Fixed Y for barrels on ground
+        new_object.game_over_triggered.connect(on_game_over)
+
+    add_child(new_object)
+
+    # Adjust spawn interval to make it harder over time (optional)
+    spawn_timer.wait_time = max(0.5, spawn_interval - (get_tree().get_process_time() * 0.01))
+
+func on_coin_collected() -&gt; void:
+    current_score += 1
+    update_score_display()
+
+func on_game_over() -&gt; void:
+    if game_over:
+        return
+    game_over = true
+    get_tree().paused = true # Pause the game
+    game_over_panel.show()
+    if game_over_sound:
+        game_over_sound.play()
+    score_label.text = &quot;Score: %d\nGame Over!&quot; % current_score
+
+func update_score_display() -&gt; void:
+    score_label.text = &quot;Score: %d&quot; % current_score
+
+func _on_RestartButton_pressed() -&gt; void:
+    new_game()
+</code></pre>
+        
+      </div>
+    </div>
+  </div>
+      </div>
+      
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const accordions = document.querySelectorAll('.accordion-toggle');
+        accordions.forEach((button, index) => {
+          const content = button.closest('.accordion-item').querySelector('.content');
+          const arrow = button.querySelector('.arrow');
+          if (index === 0) { // Open first item by default
+              content.classList.add('open');
+              arrow.style.transform = 'rotate(180deg)';
+          }
+          button.addEventListener('click', () => {
+            const isOpen = content.classList.toggle('open');
+            arrow.style.transform = isOpen ? 'rotate(180deg)' : '';
+          });
+        });
+      });
+    </script>
+  
+    </body>
+    </html>
