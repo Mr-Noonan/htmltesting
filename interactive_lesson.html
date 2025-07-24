@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Natural Processes: Changing Environments</title>
+
+    <!-- Tailwind CSS CDN -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts - Inter -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+
+        body {
+
+            font-family: 'Inter', sans-serif;
+
+            background-color: #f3f4f6; /* Light gray background */
+
+        }
+
+        /* Neo-brutalism box style */
+
+        .neo-box {
+
+            border: 4px solid #1a202c; /* Dark border */
+
+            box-shadow: 8px 8px 0px #1a202c; /* Offset dark shadow */
+
+            background-color: #ffffff; /* White background */
+
+            padding: 1.5rem;
+
+            border-radius: 0.5rem; /* Slightly rounded corners */
+
+            transition: transform 0.2s, box-shadow 0.2s;
+
+        }
+
+        .neo-box:hover {
+
+            transform: translate(-2px, -2px);
+
+            box-shadow: 10px 10px 0px #1a202c;
+
+        }
+
+        /* Neo-brutalism button style */
+
+        .neo-button {
+
+            background-color: #facc15; /* Yellow */
+
+            color: #1a202c; /* Dark text */
+
+            font-weight: 700; /* Bold */
+
+            padding: 0.75rem 1.5rem;
+
+            border: 4px solid #1a202c;
+
+            box-shadow: 4px 4px 0px #1a202c;
+
+            border-radius: 0.25rem;
+
+            transition: transform 0.1s, box-shadow 0.1s;
+
+        }
+
+        .neo-button:hover {
+
+            transform: translate(2px, 2px);
+
+            box-shadow: 0px 0px 0px #1a202c;
+
+        }
+
+        /* Responsive video container */
+
+        .video-container {
+
+            position: relative;
+
+            width: 100%;
+
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+
+            height: 0;
+
+            overflow: hidden;
+
+            border: 2px solid #1a202c; /* Inner border for video */
+
+        }
+
+        .video-container iframe {
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+        }
+
+    </style>
+
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+
+    <div class="container mx-auto p-4 sm:p-8">
+
+        <!-- Header Section -->
+
+        <header class="text-center mb-12 py-8 bg-blue-400 border-4 border-black shadow-[12px_12px_0_black] rounded-lg">
+
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold uppercase tracking-tight text-black mb-4">
+
+                Earth's Dynamic Forces
+
+            </h1>
+
+            <p class="text-lg sm:text-xl text-black font-semibold">
+
+                Explore natural processes that shape our world.
+
+            </p>
+
+        </header>
+
+
+
+        <!-- Videos Section -->
+
+        <section class="mb-12">
+
+            <h2 class="text-3xl sm:text-4xl font-bold uppercase text-center mb-8 pb-4 border-b-4 border-black">
+
+                Featured Processes
+
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+
+                <!-- Erosion Video -->
+
+                <div class="neo-box">
+
+                    <h3 class="text-2xl font-bold mb-4 text-black">1. Erosion</h3>
+
+                    <div class="video-container mb-4">
+
+                        <iframe
+
+                            src="https://www.youtube.com/embed/R-Iak3Wvh9c?si=lFP08EalgDSIUHHt"
+
+                            title="Weathering and Erosion: Crash Course Kids #10.2"
+
+                            frameborder="0"
+
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+
+                            allowfullscreen>
+
+                        </iframe>
+
+                    </div>
+
+                    <p class="text-gray-700">
+
+                        Discover how natural forces like wind and water gradually wear away the Earth's surface, creating stunning landscapes and dramatic changes over time.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- Volcanic Activity Video -->
+
+                <div class="neo-box">
+
+                    <h3 class="text-2xl font-bold mb-4 text-black">2. Volcanic Activity</h3>
+
+                    <div class="video-container mb-4">
+
+                        <iframe
+
+                            src="https://www.youtube.com/embed/LQwZwKS9RPs?si=w6PJbpjvMXj_euS2"
+
+                            title="How do volcanoes erupt? - TED-Ed"
+
+                            frameborder="0"
+
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+
+                            allowfullscreen>
+
+                        </iframe>
+
+                    </div>
+
+                    <p class="text-gray-700">
+
+                        Witness the immense power of volcanoes as molten rock, ash, and gases erupt from beneath the Earth's crust, reshaping landforms in an instant.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- Tsunamis Video -->
+
+                <div class="neo-box">
+
+                    <h3 class="text-2xl font-bold mb-4 text-black">3. Tsunamis</h3>
+
+                    <div class="video-container mb-4">
+
+                        <iframe
+
+                            src="https://www.youtube.com/embed/V6cnFM55_Dw?si=K1Vi1CidnpJF56bo"
+
+                            title="How Do Tsunamis Work? - SciShow Kids"
+
+                            frameborder="0"
+
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+
+                            allowfullscreen>
+
+                        </iframe>
+
+                    </div>
+
+                    <p class="text-gray-700">
+
+                        Understand the science behind these powerful ocean waves, often triggered by underwater earthquakes, and their devastating impact on coastal environments.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- Bushfires Video -->
+
+                <div class="neo-box">
+
+                    <h3 class="text-2xl font-bold mb-4 text-black">4. Bushfires</h3>
+
+                    <div class="video-container mb-4">
+
+                        <iframe
+
+                            src="https://www.youtube.com/embed/dKVakiS2VoY?si=6Uy1fm6AQyYM2JCx"
+
+                            title="The Science of Bushfire: How do they start and spread? | ABC News In-depth"
+
+                            frameborder="0"
+
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+
+                            allowfullscreen>
+
+                        </iframe>
+
+                    </div>
+
+                    <p class="text-gray-700">
+
+                        Learn about the complex factors that contribute to bushfires, their ecological role in some Australian ecosystems, and their profound impact on landscapes and communities.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Other Activities Section -->
+
+        <section class="neo-box bg-green-300 border-4 border-black shadow-[8px_8px_0_black] p-6 sm:p-8">
+
+            <h2 class="text-3xl sm:text-4xl font-bold uppercase text-black mb-6 pb-4 border-b-4 border-black">
+
+                Beyond the Videos: Explore More!
+
+            </h2>
+
+            <p class="text-lg text-gray-800 mb-6">
+
+                Now that you've seen the power of these natural processes, it's time to dive deeper! Here are some ideas for further activities to enhance your understanding:
+
+            </p>
+
+
+
+            <ul class="list-disc pl-6 space-y-4 text-gray-800 text-base sm:text-lg">
+
+                <li class="relative pl-6">
+
+                    <span class="absolute left-0 top-0 text-2xl font-extrabold text-black">&bull;</span>
+
+                    <strong>Interactive Map Exploration:</strong> Use Google Earth or Geoscience Australia's hazard maps to locate areas prone to these natural processes. Can you find evidence of past events?
+
+                </li>
+
+                <li class="relative pl-6">
+
+                    <span class="absolute left-0 top-0 text-2xl font-extrabold text-black">&bull;</span>
+
+                    <strong>Research Project:</strong> Choose one natural process and research a specific event (e.g., the 2011 Japan Tsunami, a major Australian bushfire, the eruption of Krakatoa). Investigate its causes, impacts, and recovery efforts.
+
+                </li>
+
+                <li class="relative pl-6">
+
+                    <span class="absolute left-0 top-0 text-2xl font-extrabold text-black">&bull;</span>
+
+                    <strong>Design a Warning System:</strong> Imagine you live in an area vulnerable to one of these processes. Design a simple warning system or community preparedness plan.
+
+                </li>
+
+                <li class="relative pl-6">
+
+                    <span class="absolute left-0 top-0 text-2xl font-extrabold text-black">&bull;</span>
+
+                    <strong>Debate:</strong> "Are natural processes entirely destructive, or do they also play a vital role in shaping healthy ecosystems?" Prepare arguments for both sides.
+
+                </li>
+
+                <li class="relative pl-6">
+
+                    <span class="absolute left-0 top-0 text-2xl font-extrabold text-black">&bull;</span>
+
+                    <strong>Creative Writing/Art:</strong> Create a short story, poem, or piece of art inspired by the power and impact of one of these natural processes.
+
+                </li>
+
+            </ul>
+
+
+
+            <div class="text-center mt-10">
+
+                <button class="neo-button">
+
+                    Start Your Next Activity!
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Footer Section -->
+
+        <footer class="text-center mt-12 py-6 text-gray-700 text-sm">
+
+            <p>&copy; 2025 Natural Processes Explorer. All rights reserved.</p>
+
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
